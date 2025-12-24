@@ -1,131 +1,131 @@
-    # 🧾 Gateway Djomy
+# 🧾 Gateway Djomy
 
-    **Gateway Djomy** est une passerelle de paiement WooCommerce
-    permettant d'intégrer facilement le service **Djomy** aux sites
-    WordPress.\
-    Le plugin ajoute une méthode de paiement dédiée, gère les transactions,
-    la redirection de paiement ainsi que l'affichage des transactions dans
-    l'admin WordPress.
+**Gateway Djomy** est une passerelle de paiement WooCommerce
+permettant d'intégrer facilement le service **Djomy** aux sites
+WordPress.\
+Le plugin ajoute une méthode de paiement dédiée, gère les transactions,
+la redirection de paiement ainsi que l'affichage des transactions dans
+l'admin WordPress.
 
-    ## 🚀 Fonctionnalités
+## 🚀 Fonctionnalités
 
-    -   Intégration complète de Djomy comme mode de paiement WooCommerce\
-    -   Mode **Test / Sandbox** disponible\
-    -   Page d'administration dédiée pour consulter les transactions\
-    -   Webhooks / callbacks pour mise à jour des statuts\
-    -   Scripts JS dédiés\
-    -   Autoload PSR-4 via Composer\
-    -   Code structuré (`includes/`, `assets/`, `vendor/`)
+-   Intégration complète de Djomy comme mode de paiement WooCommerce\
+-   Mode **Test / Sandbox** disponible\
+-   Page d'administration dédiée pour consulter les transactions\
+-   Webhooks / callbacks pour mise à jour des statuts\
+-   Scripts JS dédiés\
+-   Autoload PSR-4 via Composer\
+-   Code structuré (`includes/`, `assets/`, `vendor/`)
 
-    ## 📂 Structure du Plugin
+## 📂 Structure du Plugin
 
-        wc-gateway-djomy/
-        │
-        ├── wc-gateway-djomy.php        # Fichier principal du plugin
-        ├── autoload.php                # Autoload personnalisé
-        ├── composer.json               # Chargement PSR-4
-        │
-        ├── includes/
-        │   ├── Gateway.php             # Classe principale de la passerelle
-        │   ├── DB.php                  # Gestion base de données
-        │   └── TransactionsList.php    # Liste admin (WP_List_Table)
-        │
-        ├── assets/
-        │   └── js/
-        │       └── djomy.js            # Script JS pour la redirection + AJAX
-        │
-        └── vendor/                     # Autoload Composer
+    wc-gateway-djomy/
+    │
+    ├── wc-gateway-djomy.php        # Fichier principal du plugin
+    ├── autoload.php                # Autoload personnalisé
+    ├── composer.json               # Chargement PSR-4
+    │
+    ├── includes/
+    │   ├── Gateway.php             # Classe principale de la passerelle
+    │   ├── DB.php                  # Gestion base de données
+    │   └── TransactionsList.php    # Liste admin (WP_List_Table)
+    │
+    ├── assets/
+    │   └── js/
+    │       └── djomy.js            # Script JS pour la redirection + AJAX
+    │
+    └── vendor/                     # Autoload Composer
 
-    ## 📦 Installation
+## 📦 Installation
 
-    1.  Télécharger le dossier du plugin\
-    2.  Le placer dans :
+1.  Télécharger le dossier du plugin\
+2.  Le placer dans :
 
-    ```{=html}
-    <!-- -->
-    ```
-        wp-content/plugins/wc-gateway-djomy
+```{=html}
+<!-- -->
+```
+    wp-content/plugins/wc-gateway-djomy
 
-    3.  Activer le plugin depuis **Extensions \> Installées**\
-    4.  Aller dans :\
-        **WooCommerce → Réglages → Paiements → Djomy**
+3.  Activer le plugin depuis **Extensions \> Installées**\
+4.  Aller dans :\
+    **WooCommerce → Réglages → Paiements → Djomy**
 
-    ## ⚙️ Configuration
+## ⚙️ Configuration
 
-    -   Activer/Désactiver Djomy\
-    -   Test Mode (sandbox)\
-    -   Identifiants API Djomy\
-    -   URL sandbox & production\
-    -   Méthode de redirection\
-    -   Page de retour après paiement
+-   Activer/Désactiver Djomy\
+-   Test Mode (sandbox)\
+-   Identifiants API Djomy\
+-   URL sandbox & production\
+-   Méthode de redirection\
+-   Page de retour après paiement
 
-    ## 📝 Scripts Front-End
+## 📝 Scripts Front-End
 
-    ``` php
-    public function enqueue_scripts() {
-        wp_enqueue_script(
-            'djomy-js',
-            plugins_url('/assets/js/djomy.js', __FILE__),
-            ['jquery'],
-            '1.0',
-            true
-        );
+``` php
+public function enqueue_scripts() {
+    wp_enqueue_script(
+        'djomy-js',
+        plugins_url('/assets/js/djomy.js', __FILE__),
+        ['jquery'],
+        '1.0',
+        true
+    );
 
-        wp_localize_script('djomy-js', 'djomy_settings', [
-            'testmode'    => $this->get_option('testmode'),
-            'sandbox_url' => 'https://sandbox...',
-        ]);
+    wp_localize_script('djomy-js', 'djomy_settings', [
+        'testmode'    => $this->get_option('testmode'),
+        'sandbox_url' => 'https://sandbox...',
+    ]);
+}
+```
+
+## 🔐 Sécurité
+
+-   Vérification nonce sur les actions sensibles\
+-   Filtrage des données entrantes\
+-   Sécurisation des callbacks\
+-   Utilisation du système natif WooCommerce (`wc_add_notice`, hooks,
+    status...)
+
+## 🧰 Transactions
+
+Une page **Transactions Djomy** est créée dans l'admin WordPress pour
+consulter :
+
+-   ID transaction\
+-   Montant\
+-   Statut\
+-   Client\
+-   Date\
+-   Logs techniques
+
+## 👨‍💻 Développement
+
+### Autoload PSR-4
+
+``` json
+{
+"autoload": {
+    "psr-4": {
+    "Djomy\": "includes/"
     }
-    ```
+}
+}
+```
 
-    ## 🔐 Sécurité
+### Recompiler l'autoload
 
-    -   Vérification nonce sur les actions sensibles\
-    -   Filtrage des données entrantes\
-    -   Sécurisation des callbacks\
-    -   Utilisation du système natif WooCommerce (`wc_add_notice`, hooks,
-        status...)
+    composer dump-autoload
 
-    ## 🧰 Transactions
+## 🧪 Mode Sandbox
 
-    Une page **Transactions Djomy** est créée dans l'admin WordPress pour
-    consulter :
+Toutes les transactions passent par sandbox :
 
-    -   ID transaction\
-    -   Montant\
-    -   Statut\
-    -   Client\
-    -   Date\
-    -   Logs techniques
+    https://sandbox-api.djomy.africa
 
-    ## 👨‍💻 Développement
+## 📄 Licence
 
-    ### Autoload PSR-4
+Ce plugin est distribué sous licence MIT.
 
-    ``` json
-    {
-    "autoload": {
-        "psr-4": {
-        "Djomy\": "includes/"
-        }
-    }
-    }
-    ```
+## 🤝 Contribuer
 
-    ### Recompiler l'autoload
-
-        composer dump-autoload
-
-    ## 🧪 Mode Sandbox
-
-    Toutes les transactions passent par sandbox :
-
-        https://sandbox-api.djomy.africa
-
-    ## 📄 Licence
-
-    Ce plugin est distribué sous licence MIT.
-
-    ## 🤝 Contribuer
-
-    Les PR sont les bienvenues !
+Les PR sont les bienvenues !
