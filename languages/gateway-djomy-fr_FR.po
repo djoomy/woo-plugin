@@ -1,0 +1,389 @@
+# WooCommerce Gateway Djomy - Traduction française
+# Copyright (C) 2025 Ibrahima Sory Diallo
+# This file is distributed under the same license as the WooCommerce Gateway Djomy package.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Gateway Djomy 1.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-11 10:00+0000\n"
+"PO-Revision-Date: 2024-12-11 10:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: TransactionsList.php:23
+msgid "Transaction"
+msgstr "Transaction"
+
+#: TransactionsList.php:24
+msgid "Transactions"
+msgstr "Transactions"
+
+#: TransactionsList.php:86
+msgid "Commande"
+msgstr "Commande"
+
+#: TransactionsList.php:87
+msgid "ID Transaction"
+msgstr "ID Transaction"
+
+#: TransactionsList.php:88
+msgid "Montant"
+msgstr "Montant"
+
+#: TransactionsList.php:89
+msgid "Statut"
+msgstr "Statut"
+
+#: TransactionsList.php:90
+msgid "Méthode"
+msgstr "Méthode"
+
+#: TransactionsList.php:91
+msgid "Client"
+msgstr "Client"
+
+#: TransactionsList.php:92
+msgid "Date"
+msgstr "Date"
+
+#: TransactionsList.php:93
+msgid "Actions"
+msgstr "Actions"
+
+#: TransactionsList.php:115
+msgid "N/A"
+msgstr "N/A"
+
+#: TransactionsList.php:195
+msgid "Vérifier le statut"
+msgstr "Vérifier le statut"
+
+#: TransactionsList.php:196
+msgid "Exporter en CSV"
+msgstr "Exporter en CSV"
+
+#: TransactionsList.php:253
+msgid "Rechercher"
+msgstr "Rechercher"
+
+#: TransactionsList.php:264
+msgid "Aucune transaction Djomy trouvée."
+msgstr "Aucune transaction Djomy trouvée."
+
+#: Gateway.php:50
+msgid "Djomy"
+msgstr "Djomy"
+
+#: Gateway.php:51
+msgid "Acceptez les paiements par Mobile Money via la plateforme Djomy."
+msgstr "Acceptez les paiements par Mobile Money via la plateforme Djomy."
+
+#: Gateway.php:106
+msgid "Transactions Djomy"
+msgstr "Transactions Djomy"
+
+#: Gateway.php:142
+msgid "URL de Webhook"
+msgstr "URL de Webhook"
+
+#: Gateway.php:146
+msgid "Configurez cette URL dans votre tableau de bord Djomy pour recevoir les notifications de changement de statut: %s"
+msgstr "Configurez cette URL dans votre tableau de bord Djomy pour recevoir les notifications de changement de statut: %s"
+
+#: Gateway.php:156
+msgid "Activer/Désactiver"
+msgstr "Activer/Désactiver"
+
+#: Gateway.php:159
+msgid "Activer le paiement Djomy"
+msgstr "Activer le paiement Djomy"
+
+#: Gateway.php:164
+msgid "Titre"
+msgstr "Titre"
+
+#: Gateway.php:167
+msgid "Texte affiché au checkout"
+msgstr "Texte affiché au checkout"
+
+#: Gateway.php:168
+msgid "Paiement Mobile Djomy"
+msgstr "Paiement Mobile Djomy"
+
+#: Gateway.php:173
+msgid "Description"
+msgstr "Description"
+
+#: Gateway.php:176
+msgid "Description visible par le client"
+msgstr "Description visible par le client"
+
+#: Gateway.php:177
+msgid "Payez via Djomy Mobile Money"
+msgstr "Payez via Djomy Mobile Money"
+
+#: Gateway.php:182
+msgid "Identifiants API"
+msgstr "Identifiants API"
+
+#: Gateway.php:186
+msgid "API Key"
+msgstr "API Key"
+
+#: Gateway.php:189
+msgid "Clé API fournie par Djomy"
+msgstr "Clé API fournie par Djomy"
+
+#: Gateway.php:194
+msgid "API Secret"
+msgstr "API Secret"
+
+#: Gateway.php:197
+msgid "Secret fourni par Djomy"
+msgstr "Secret fourni par Djomy"
+
+#: Gateway.php:202
+msgid "URL De base API"
+msgstr "URL De base API"
+
+#: Gateway.php:205
+msgid "Configurez l'url de base de l'API Djomy."
+msgstr "Configurez l'url de base de l'API Djomy."
+
+#: Gateway.php:210
+msgid "Endpoints API"
+msgstr "Endpoints API"
+
+#: Gateway.php:213
+msgid "Configurez les endpoints de l'API Djomy."
+msgstr "Configurez les endpoints de l'API Djomy."
+
+#: Gateway.php:218
+msgid "Endpoint de création de paiement"
+msgstr "Endpoint de création de paiement"
+
+#: Gateway.php:221
+msgid "Exemple :/v1/payments"
+msgstr "Exemple :/v1/payments"
+
+#: Gateway.php:226
+msgid "Endpoint de vérification"
+msgstr "Endpoint de vérification"
+
+#: Gateway.php:229
+msgid "Exemple : /v1/payments/{reference}"
+msgstr "Exemple : /v1/payments/{reference}"
+
+#: Gateway.php:234
+msgid "Icône"
+msgstr "Icône"
+
+#: Gateway.php:237
+msgid "Sélectionnez une image depuis la médiathèque ou entrez une URL."
+msgstr "Sélectionnez une image depuis la médiathèque ou entrez une URL."
+
+#: Gateway.php:242
+msgid "Mode test"
+msgstr "Mode test"
+
+#: Gateway.php:245
+msgid "Activer le mode test"
+msgstr "Activer le mode test"
+
+#: Gateway.php:248
+msgid "Utilisez le mode test pour effectuer des paiements simulés."
+msgstr "Utilisez le mode test pour effectuer des paiements simulés."
+
+#: Gateway.php:253
+msgid "Journalisation de débogage"
+msgstr "Journalisation de débogage"
+
+#: Gateway.php:256
+msgid "Activer la journalisation"
+msgstr "Activer la journalisation"
+
+#: Gateway.php:259
+msgid "Enregistre les événements de l'API Djomy dans %s"
+msgstr "Enregistre les événements de l'API Djomy dans %s"
+
+#: Gateway.php:270
+msgid "Vous serez redirigé vers Djomy pour effectuer le paiement."
+msgstr "Vous serez redirigé vers Djomy pour effectuer le paiement."
+
+#: Gateway.php:281
+msgid "Erreur de chiffrement : "
+msgstr "Erreur de chiffrement : "
+
+#: Gateway.php:290
+msgid "Les identifiants API ne sont pas configurés correctement."
+msgstr "Les identifiants API ne sont pas configurés correctement."
+
+#: Gateway.php:333
+msgid "Erreur de connexion à l'API Djomy: "
+msgstr "Erreur de connexion à l'API Djomy: "
+
+#: Gateway.php:352
+msgid "L'API Djomy a retourné un code d'erreur: %d"
+msgstr "L'API Djomy a retourné un code d'erreur: %d"
+
+#: Gateway.php:362
+msgid "Le token d'accès est absent de la réponse API."
+msgstr "Le token d'accès est absent de la réponse API."
+
+#: Gateway.php:407
+msgid "L'API Djomy n'a pas retourné d'URL de paiement."
+msgstr "L'API Djomy n'a pas retourné d'URL de paiement."
+
+#: Gateway.php:420
+msgid "Erreur API Djomy: "
+msgstr "Erreur API Djomy: "
+
+#: Gateway.php:426
+msgid "Code d'erreur %s"
+msgstr "Code d'erreur %s"
+
+#: Gateway.php:466
+msgid "En attente de paiement Djomy"
+msgstr "En attente de paiement Djomy"
+
+#: Gateway.php:489
+msgid "Données manquantes"
+msgstr "Données manquantes"
+
+#: Gateway.php:554
+msgid "Paiement Djomy créé avec succès."
+msgstr "Paiement Djomy créé avec succès."
+
+#: Gateway.php:566
+msgid "Paiement Djomy en attente de traitement."
+msgstr "Paiement Djomy en attente de traitement."
+
+#: Gateway.php:571
+msgid "Paiement en attente - Montant payé: %s %s"
+msgstr "Paiement en attente - Montant payé: %s %s"
+
+#: Gateway.php:584
+msgid "Paiement réussi - ID Transaction: %s - Montant: %s %s - Frais: %s %s"
+msgstr "Paiement réussi - ID Transaction: %s - Montant: %s %s - Frais: %s %s"
+
+#: Gateway.php:601
+msgid "Paiement Djomy échoué."
+msgstr "Paiement Djomy échoué."
+
+#: Gateway.php:606
+msgid "Paiement échoué - Raison: %s"
+msgstr "Paiement échoué - Raison: %s"
+
+#: Gateway.php:615
+msgid "Raison non spécifiée"
+msgstr "Raison non spécifiée"
+
+#: Gateway.php:625
+msgid "Veuillez configurer votre clé API et secret Djomy pour activer le paiement."
+msgstr "Veuillez configurer votre clé API et secret Djomy pour activer le paiement."
+
+#: Gateway.php:630
+msgid "Les endpoints de l'API Djomy doivent être configurés."
+msgstr "Les endpoints de l'API Djomy doivent être configurés."
+
+#: Gateway.php:660
+msgid "Paiement Djomy confirmé."
+msgstr "Paiement Djomy confirmé."
+
+#: Gateway.php:663
+msgid "Paiement Djomy en attente de confirmation."
+msgstr "Paiement Djomy en attente de confirmation."
+
+#: Gateway.php:666
+msgid "Paiement Djomy échoué ou annulé."
+msgstr "Paiement Djomy échoué ou annulé."
+
+#: wc-gateway-djomy.php:76
+msgid "La passerelle de paiement Djomy nécessite WooCommerce. %s"
+msgstr "La passerelle de paiement Djomy nécessite WooCommerce. %s"
+
+#: wc-gateway-djomy.php:78
+msgid "Installer WooCommerce"
+msgstr "Installer WooCommerce"
+
+#: wc-gateway-djomy.php:90
+msgid "Ce plugin nécessite WooCommerce."
+msgstr "Ce plugin nécessite WooCommerce."
+
+#: wc-gateway-djomy.php:92
+msgid "Dépendance manquante"
+msgstr "Dépendance manquante"
+
+#: wc-gateway-djomy.php:166
+msgid "Nonce invalide."
+msgstr "Nonce invalide."
+
+#: wc-gateway-djomy.php:170
+msgid "Autorisation refusée."
+msgstr "Autorisation refusée."
+
+#: wc-gateway-djomy.php:224
+msgid "Passerelle non disponible."
+msgstr "Passerelle non disponible."
+
+#: wc-gateway-djomy.php:232
+msgid "Impossible d'initialiser la passerelle."
+msgstr "Impossible d'initialiser la passerelle."
+
+#: wc-gateway-djomy.php:242
+msgid "Endpoint API non configuré."
+msgstr "Endpoint API non configuré."
+
+#: wc-gateway-djomy.php:314
+msgid "Erreur lors de la vérification"
+msgstr "Erreur lors de la vérification"
+
+#: wc-gateway-djomy.php:322
+msgid "Impossible d'extraire le statut de la réponse API."
+msgstr "Impossible d'extraire le statut de la réponse API."
+
+#: wc-gateway-djomy.php:389
+msgid "Statut inconnu retourné par l'API."
+msgstr "Statut inconnu retourné par l'API."
+
+#: wc-gateway-djomy.php:404
+msgid "Message Djomy : %s"
+msgstr "Message Djomy : %s"
+
+#: wc-gateway-djomy.php:408
+msgid "Statut mis à jour : Paiement confirmé."
+msgstr "Statut mis à jour : Paiement confirmé."
+
+#: wc-gateway-djomy.php:416
+msgid "Statut : en attente."
+msgstr "Statut : en attente."
+
+#: wc-gateway-djomy.php:425
+msgid "Statut : Échoué/Annulé."
+msgstr "Statut : Échoué/Annulé."
+
+#: TransactionsList.php:150
+msgid "Voir la commande"
+msgstr "Voir la commande"
+
+#: TransactionsList.php:151
+msgid "Voir"
+msgstr "Voir"
+
+#: TransactionsList.php:159
+msgid "Vérifier le statut"
+msgstr "Vérifier le statut"
+
+#: TransactionsList.php:160
+msgid "Actualiser"
+msgstr "Actualiser"
