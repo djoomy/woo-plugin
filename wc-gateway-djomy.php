@@ -318,9 +318,10 @@ function djomy_call_api($gateway, $transaction_id) {
     $endpoint = rtrim($gateway->endpoint_check, '/') . '/' . rawurlencode($transaction_id). '/' . 'status';
     $args = [
         'headers' => [
-            'Content-Type' => 'application/json',
-            'X-API-KEY' => $gateway->x_api_key ?? '',
-            'Authorization' => 'Bearer ' . ($access_token ?? ''),
+            'Content-Type'      => 'application/json',
+            'X-API-KEY'         => $gateway->x_api_key ?? '',
+            'Authorization'     => 'Bearer ' . ($access_token ?? ''),
+            'X-PARTNER-DOMAINE' => $gateway->partner_domaine
         ],
         'timeout' => 20,
     ];

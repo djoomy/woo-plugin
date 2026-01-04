@@ -84,6 +84,12 @@ class Gateway extends \WC_Payment_Gateway {
      * @var string
      */
     public $icon;
+
+    /**
+     * Domaine du partenaire
+     * @var string
+     */
+    public $partner_domaine;
     
     /**
      * Constructeur
@@ -113,15 +119,16 @@ class Gateway extends \WC_Payment_Gateway {
      * Configurer les propriétés
      */
     public function setup_properties() {
-        $this->enabled     = $this->get_option('enabled');
-        $this->title       = $this->get_option('title');
-        $this->description = $this->get_option('description');
-        $this->api_key     = $this->get_option('api_key');
-        $this->api_secret  = $this->get_option('api_secret');
-        $this->base_url    = $this->get_option('base_url');
-        $this->testmode    = 'yes' === $this->get_option('testmode');
-        $this->debug       = 'yes' === $this->get_option('debug');
-        $this->icon        = $this->get_option('icon_url');
+        $this->enabled          = $this->get_option('enabled');
+        $this->title            = $this->get_option('title');
+        $this->description      = $this->get_option('description');
+        $this->api_key          = $this->get_option('api_key');
+        $this->api_secret       = $this->get_option('api_secret');
+        $this->base_url         = $this->get_option('base_url');
+        $this->testmode         = 'yes' === $this->get_option('testmode');
+        $this->debug            = 'yes' === $this->get_option('debug');
+        $this->icon             = $this->get_option('icon_url');
+        $this->partner_domaine  = $this->get_option('partner_domaine');
         
         // Configurer les endpoints
         $this->setup_endpoints();
@@ -285,6 +292,13 @@ class Gateway extends \WC_Payment_Gateway {
                 'default'     => __('Payez via Djomy Mobile Money', 'gateway-djomy'),
                 'desc_tip'    => true,
             ),
+            'partner_domaine' => array(
+                'title'       => __('Nom de domaine', 'gateway-djomy'),
+                'type'        => 'text',
+                'description' => __('Entrez votre nom de domaine', 'gateway-djomy'),
+                'default'     => parse_url(home_url(), PHP_URL_HOST),
+                'desc_tip'    => true,
+            ),
             'api_credentials' => array(
                 'title'       => __('Identifiants API', 'gateway-djomy'),
                 'type'        => 'title',
@@ -405,6 +419,7 @@ class Gateway extends \WC_Payment_Gateway {
                 'Content-Type'  => 'application/json',
                 'X-API-KEY'     => $this->x_api_key,
                 'Accept'        => 'application/json',
+                'X-PARTNER-DOMAINE' => $this->partner_domaine
             ),
             'timeout'     => 30,
             'user-agent'  => 'WooCommerce/' . WC()->version . '; ' . get_bloginfo('url')
@@ -499,9 +514,10 @@ class Gateway extends \WC_Payment_Gateway {
         $args = array(
             'body'        => json_encode($body),
             'headers'     => array(
-                'Content-Type'  => 'application/json',
-                'X-API-KEY'     => $this->x_api_key,  // Votre clé API
-                'Authorization' => 'Bearer ' . $access_token  // Le token JWT fourni par Djomy
+                'Content-Type'      => 'application/json',
+                'X-API-KEY'         => $this->x_api_key,  // Votre clé API
+                'Authorization'     => 'Bearer ' . $access_token,  // Le token JWT fourni par Djomy
+                'X-PARTNER-DOMAINE' => $this->partner_domaine
             ),
             'timeout'     => 30,
             'user-agent'  => 'WooCommerce/' . WC()->version . '; ' . get_bloginfo('url')
