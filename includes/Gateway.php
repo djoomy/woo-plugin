@@ -419,7 +419,7 @@ class Gateway extends \WC_Payment_Gateway {
                 'Content-Type'  => 'application/json',
                 'X-API-KEY'     => $this->x_api_key,
                 'Accept'        => 'application/json',
-                'X-PARTNER-DOMAINE' => $this->partner_domaine
+                'X-PARTNER-DOMAIN' => $this->partner_domaine
             ),
             'timeout'     => 30,
             'user-agent'  => 'WooCommerce/' . WC()->version . '; ' . get_bloginfo('url')
@@ -517,7 +517,7 @@ class Gateway extends \WC_Payment_Gateway {
                 'Content-Type'      => 'application/json',
                 'X-API-KEY'         => $this->x_api_key,  // Votre clé API
                 'Authorization'     => 'Bearer ' . $access_token,  // Le token JWT fourni par Djomy
-                'X-PARTNER-DOMAINE' => $this->partner_domaine
+                'X-PARTNER-DOMAIN' => $this->partner_domaine
             ),
             'timeout'     => 30,
             'user-agent'  => 'WooCommerce/' . WC()->version . '; ' . get_bloginfo('url')
