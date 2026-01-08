@@ -321,7 +321,7 @@ function djomy_call_api($gateway, $transaction_id) {
             'Content-Type'      => 'application/json',
             'X-API-KEY'         => $gateway->x_api_key ?? '',
             'Authorization'     => 'Bearer ' . ($access_token ?? ''),
-            'X-PARTNER-DOMAINE' => $gateway->partner_domaine
+            'X-PARTNER-DOMAIN' => $gateway->partner_domaine
         ],
         'timeout' => 20,
     ];
